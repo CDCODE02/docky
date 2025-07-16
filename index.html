@@ -23,6 +23,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <link rel="icon" type="image/x-icon" href="images/20240403_150616.png">
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+
+  .fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+</style>
+
+
 <style>
   @keyframes scroll-left {
     0% {
@@ -112,7 +147,7 @@
                     </li>
                     
                     <li>
-                        <a href="#"
+                        <a href="#memes"
                             class="violet block py-2 px-3 text-white text-lg lg:text-xl rounded hover:text-teal-900 md:hover:bg-transparent md:border-0 md:hover:text-teal-900 md:p-0  ">
                             <i class="bx bx-map-alt"></i> MEMES</a>
                     </li>
@@ -161,7 +196,7 @@
   “Keep silent and lock in”
 </span>
                 </h1>
-                <a href="https://pump.fun" class="w-full md:w-1/2 lg:w-1/2">
+                <a href=".fun" class="w-full md:w-1/2 lg:w-1/2">
                     <button type="button"
                         class="text-teal-900 flex justify-center gap-x-2 items-center  w-full bg-black hover:bg-white hover:text-black border border-white focus:outline-none focus:ring-4 focus:ring-white font-medium rounded-full text-lg px-5 py-2.5 me-2 mb-2 ">
                         BUY
@@ -316,43 +351,29 @@
         </div>
     </section>
 
-    <section id="map" class=" text-white py-16">
-        <div class="container mx-auto text-center">
-            <div class="token1 flex flex-col-reverse md:flex-row md:items-center justify-start mx-4 md:mx-6 lg:mx-8">
-                <h1 class="token text-5xl lg:text-7xl font-extrabold mb-8 text-white ">ROADMAP</h1>
-                <img class="w-32 md:w-42 lg:w-64 px-5" src="images/tok.svg" alt="">
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 m-10 align-middle ">
-                <!-- Total Supply -->
-                <div class="token1 p-6 border-4 border-white rounded-lg shadow-2xl">
-                    <h1 class="text-3xl font-bold mb-4 text-white">Phase 1</h1>
-                    <p class="tok pt-5">. Community Building</p>
+    <section id="memes" class="py-12 px-4 text-center bg-gradient-to-r from-yellow-400 to-orange-500">
+  <h2 class="text-4xl md:text-5xl font-bold font-fun text-white mb-10 drop-shadow-[2px_2px_black]">
+    🦆 Ducky Memories
+  </h2>
 
-                    <p1>. Prelaunch marketing</p1> <br>
+  <!-- Meme Card -->
+  <div class="max-w-sm mx-auto bg-white rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.4)] border-[6px] border-black p-3 relative">
+    <img id="memeImage" src="https://i.imgflip.com/7u9pbo.jpg" alt="Meme" class="rounded-md fade-in">
+    <div class="text-center font-fun text-lg mt-2 text-black">#DuckyMeme</div>
+  </div>
 
-                    <p2>. Live on Pump.fun</p2> <br>
-                    <p2>. KOTH</p2> <br>
-                    <p2>. Bonding curve completion</p2>
-                </div>
-                <!-- Initial Liquidity -->
-                <div class="token2 p-6 border-4 border-white rounded-lg shadow-md">
-                    <h1 class="text-3xl font-bold mb-4 text-white">Phase 2</h1>
-                    <p class="tok   pt-5">. Dex Updates/Dex ads</p>
+  <!-- Prev/Next -->
+  <div class="mt-6 flex justify-center gap-4">
+    <button onclick="prevMeme()" class="bg-black text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-800 font-bold">
+      ⬅️ PREV
+    </button>
+    <button onclick="nextMeme()" class="bg-black text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-800 font-bold">
+      NEXT ➡️
+    </button>
+  </div>
+</section>
 
-                    <p1>. Marketing</p>
-                    <p2>. Token Utility Awareness</p2><br>
-                    <p2>. Utility Testing</p2><br>
-                    <p2>. Utility Integration</p2>
-                </div>
-                <div class="token2 p-6 border-4 border-white rounded-lg shadow-md">
-                    <h1 class="text-3xl font-bold mb-4 text-white">Phase 3</h1>
-                    <p class="tok   pt-5">. $3M market cap target</p>
 
-                    <p1>. Listings</p>
-                    <p2>. Marketing</p2><br>
-                    <p2>. Charity/Community Incentives</p2>
-                </div>
-    </section>
     <!-- partners section -->
     <section id="HOWTO">
         <div class="container mx-auto text-center p-5 lg:pb-20">
@@ -491,5 +512,42 @@
         navbg.classList.toggle('active');
     });
 </script>
+<script>
+  const memes = [
+    "https://docky-phi.vercel.app/images/lookingwag.png",
+    "https://docky-phi.vercel.app/images/4frogs.png",
+    "https://docky-phi.vercel.app/images/loggo.jpeg",
+    "https://docky-phi.vercel.app/images/logo1.png"
+  ];
+
+  let currentMeme = 0;
+  const memeImage = document.getElementById("memeImage");
+
+  function updateMeme() {
+    memeImage.classList.remove("fade-in");
+    memeImage.classList.add("fade-out");
+
+    setTimeout(() => {
+      memeImage.src = memes[currentMeme];
+      memeImage.classList.remove("fade-out");
+      memeImage.classList.add("fade-in");
+    }, 500); // matches fade-out duration
+  }
+
+  function nextMeme() {
+    currentMeme = (currentMeme + 1) % memes.length;
+    updateMeme();
+  }
+
+  function prevMeme() {
+    currentMeme = (currentMeme - 1 + memes.length) % memes.length;
+    updateMeme();
+  }
+
+  // Auto-slide every 5.5 seconds
+  setInterval(nextMeme, 7000);
+</script>
+
+
 
 </html>
